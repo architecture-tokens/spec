@@ -4,5 +4,5 @@ libraries: [core@0.1.0]
 components:
   - id: api
     type: core:component.service
-    tokens: [core:component.public, core:component.encrypted, core:component.production]
+    tokens: [{token: core:component.public}, {token: core:component.encrypted}, {token: core:component.production}]
 relationships: []

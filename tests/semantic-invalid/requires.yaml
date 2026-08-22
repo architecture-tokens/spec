@@ -4,6 +4,6 @@ libraries: [core@0.1.0]
 components:
   - id: db
     type: core:component.database
-    tokens: [core:component.encrypted]
-    values: {engine: postgres}
+    tokens: [{token: core:component.encrypted}]
+    configuration: {engine: postgres}
 relationships: []
