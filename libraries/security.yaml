@@ -21,3 +21,9 @@ tokens:
     description: Relationship uses TLS 1.3.
     appliesTo: {elementKinds: [relationship], relationshipTypes: [core:relationship.call.sync, core:relationship.data.read]}
     requires: [security:security.encryption.in-transit]
+  - id: security.tls.v13
+    kind: applied
+    name: TLS v1.3
+    description: Relationship uses TLS v1.3.
+    appliesTo: {elementKinds: [relationship]}
+    requires: [security:security.encryption.in-transit]

@@ -1,0 +1,8 @@
+kind: token-library
+namespace: bad
+domains: [bad]
+version: 0.1.0
+name: Invalid references
+tokens:
+  - {id: bad.one, kind: applied, name: One, description: One, appliesTo: {elementKinds: [component], componentTypes: [missing:component.type]}, requires: [missing:applied.token], conflicts: [bad:bad.two]}
+  - {id: bad.two, kind: component-type, name: Two, description: Two}

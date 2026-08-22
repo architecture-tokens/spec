@@ -1,0 +1,7 @@
+kind: architecture-model
+id: duplicate-element
+libraries: [core@0.1.0]
+components:
+  - {id: same, type: core:component.service, tokens: []}
+relationships:
+  - {id: same, type: core:relationship.call.sync, from: same, to: same, tokens: []}

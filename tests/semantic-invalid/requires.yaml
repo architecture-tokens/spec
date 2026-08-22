@@ -1,9 +1,9 @@
 kind: architecture-model
 id: requires
-libraries: [core@0.1.0]
+libraries: [core@0.1.0, security@0.1.0]
 components:
   - id: db
     type: core:component.database
-    tokens: [{token: core:component.encrypted}]
+    tokens: [{token: security:security.tls.v13}]
     configuration: {engine: postgres}
 relationships: []
