@@ -1,4 +1,6 @@
-id: component.database
-name: Database
+kind: architecture-model
+id: unknown-field
 category: resource
-description: Uses a category that v0.1 does not define.
+libraries: [core@0.1.0]
+components: []
+relationships: []

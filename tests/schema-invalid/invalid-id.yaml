@@ -1,4 +1,8 @@
-id: Component.Database
-name: Database
-category: component
-description: Uses an invalid uppercase identifier.
+kind: architecture-model
+id: invalid-element-id
+libraries: [core@0.1.0]
+components:
+  - id: 1database
+    type: core:component.database
+    tokens: []
+relationships: []
