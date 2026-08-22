@@ -4,15 +4,19 @@ Version: 0.1.0
 
 This specification defines portable YAML/JSON contracts for architecture
 meaning. A token library owns a lowercase namespace and exact SemVer version.
-It contains `component-type`, `relationship-type`, and `applied` definitions.
+It contains `component-type`, `relationship-type`, and `applied` definitions;
+the reference libraries keep core types separate from security, environment,
+and lifecycle domains. IDs are hierarchical dotted names and references are
+qualified as `namespace:token.id`.
 Definitions may declare `appliesTo`, a JSON-Schema `valueSchema`, `requires`,
 `conflicts`, and implementation `mappings`.
 
 An architecture model contains libraries, components, and relationships.
 Components and relationships are foundational elements. Every element has a
 unique ID, exactly one type-token reference, and zero or more applied-token
-references. Relationships connect existing component IDs. References use
-`namespace:token-id`; libraries are selected as `namespace@version`.
+objects `{token, value?}`. `appliesTo` can restrict element kinds and type
+tokens; application values are checked against `valueSchema`. Relationships
+connect existing component IDs. Libraries are selected as `namespace@version`.
 
 Policy sets are safe typed YAML: no code or CEL. A rule has `id`, `description`,
 `severity` (`error` or `warning`), `target`, `where`, `assert`, `message`, and

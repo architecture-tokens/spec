@@ -23,7 +23,7 @@ tokens:
     description: A persistent structured data store.
 ```
 
-The package defines token libraries, architecture models, typed policy sets, validation reports, and renderer-input normalized models.
+The package defines token libraries, architecture models, typed policy sets, validation reports, and renderer-input normalized models. Core, security, environment, and lifecycle are separate namespaces; applied token uses are `{token, value?}` objects.
 
 ## Start here
 

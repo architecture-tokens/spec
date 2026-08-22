@@ -1,49 +1,11 @@
 kind: token-library
 namespace: core
 version: 0.1.0
-name: Architecture Tokens Core
-description: Portable foundational architecture vocabulary.
+name: Core
 tokens:
-  - id: component.service
-    kind: component-type
-    name: Service
-    description: A deployable software service.
-  - id: component.database
-    kind: component-type
-    name: Database
-    description: A persistent structured data store.
-    valueSchema:
-      type: object
-      required: [engine]
-      properties:
-        engine: {type: string}
-  - id: relationship.calls
-    kind: relationship-type
-    name: Calls
-    description: One component invokes another.
-  - id: relationship.exposes
-    kind: relationship-type
-    name: Exposes
-    description: A component exposes an interface to another party.
-  - id: component.encrypted
-    kind: applied
-    name: Encrypted
-    description: Data is encrypted at rest and in transit.
-    appliesTo: [component]
-    requires: [core:component.production]
-  - id: component.production
-    kind: applied
-    name: Production
-    description: Element is deployed in production.
-    appliesTo: [component]
-  - id: component.public
-    kind: applied
-    name: Public
-    description: Element is reachable from a public network.
-    appliesTo: [component]
-    conflicts: [core:component.encrypted]
-  - id: relationship.direct
-    kind: applied
-    name: Direct
-    description: Connection is direct without an intermediary.
-    appliesTo: [relationship]
+  - {id: component.database, kind: component-type, name: Database, description: Persistent structured data store.}
+  - {id: component.service, kind: component-type, name: Service, description: Deployable software service.}
+  - {id: component.external-actor, kind: component-type, name: External Actor, description: User or external system.}
+  - {id: relationship.call.sync, kind: relationship-type, name: Synchronous Call, description: Direct synchronous invocation.}
+  - {id: relationship.data.read, kind: relationship-type, name: Data Read, description: Reads data from another component.}
+  - {id: relationship.belongs.to, kind: relationship-type, name: Belongs To, description: Ownership association.}
