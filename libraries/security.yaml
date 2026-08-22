@@ -1,5 +1,6 @@
 kind: token-library
 namespace: security
+domains: [security]
 version: 0.1.0
 name: Security
 tokens:

@@ -5,7 +5,7 @@ components:
   - {id: api, type: core:component.service, tokens: [{token: environment:environment.production}]}
   - id: ledger
     type: core:component.database
-    tokens: [{token: environment:environment.production}, {token: security:security.encryption.at-rest}]
+    tokens: [{token: environment:environment.production}, {token: security:security.encryption.at-rest, value: {algorithm: aes-256}}]
 relationships:
   - id: api-ledger
     type: core:relationship.call.sync

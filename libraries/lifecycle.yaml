@@ -1,5 +1,6 @@
 kind: token-library
 namespace: lifecycle
+domains: [lifecycle]
 version: 0.1.0
 name: Lifecycle
 tokens:
