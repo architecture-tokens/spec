@@ -1,0 +1,10 @@
+id: relationship.communicates-with
+name: Communicates With
+category: relationship
+description: Indicates that one architectural element exchanges information with another.
+capabilities:
+  - information-exchange
+constraints:
+  - directed
+tags:
+  - communication

@@ -1,0 +1,14 @@
+id: component.service
+name: Service
+category: component
+description: An independently addressable unit that provides a defined set of behaviors.
+capabilities:
+  - request-handling
+constraints:
+  - independently-deployable
+relationships:
+  - relationship.communicates-with
+aliases:
+  - Application service
+tags:
+  - compute
