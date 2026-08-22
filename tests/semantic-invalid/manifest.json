@@ -1,0 +1,17 @@
+{
+  "package-version.yaml": {"codes": ["PACKAGE_VERSION_MISMATCH"]},
+  "unresolved-token.yaml": {"codes": ["UNRESOLVED_TOKEN"]},
+  "undeclared-library-token.yaml": {"codes": ["UNDECLARED_LIBRARY_TOKEN"]},
+  "wrong-kind.yaml": {"codes": ["WRONG_TOKEN_KIND"]},
+  "inapplicable.yaml": {"codes": ["TOKEN_NOT_APPLICABLE"]},
+  "requires.yaml": {"codes": ["TOKEN_REQUIRES"]},
+  "conflict.yaml": {"codes": ["TOKEN_CONFLICT"]},
+  "value-missing.yaml": {"codes": ["INVALID_TOKEN_VALUE"]},
+  "value.yaml": {"codes": ["INVALID_TOKEN_VALUE"]},
+  "unexpected-value.yaml": {"codes": ["UNEXPECTED_TOKEN_VALUE"]},
+  "type-configuration.yaml": {"codes": ["INVALID_TYPE_CONFIGURATION"]},
+  "duplicate-application.yaml": {"codes": ["DUPLICATE_APPLICATION"]},
+  "duplicate-element-id.yaml": {"codes": ["DUPLICATE_ELEMENT_ID"]},
+  "unresolved-element.yaml": {"codes": ["UNRESOLVED_ELEMENT"]},
+  "policy-violations.yaml": {"policies": true, "ruleIds": ["production-database-encryption", "production-database-not-public"]}
+}

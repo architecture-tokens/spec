@@ -9,33 +9,26 @@ They give diagrams, documentation, reviews, and automation a shared, machine-rea
 > [!IMPORTANT]
 > This repository contains an early `v0.1` draft. The model will evolve as it is tested against real architecture work.
 
-## A minimal token
+## v0.1 package
 
 ```yaml
-id: component.database
-name: Database
-category: component
-description: A persistent structured data store.
-
-capabilities:
-  - persistent-storage
-  - structured-query
-
-constraints:
-  - stateful
-
-mappings:
-  aws: rds
-  azure: azure-sql
-  gcp: cloud-sql
+kind: token-library
+namespace: core
+version: 0.1.0
+name: Architecture Tokens Core
+tokens:
+  - id: component.database
+    kind: component-type
+    name: Database
+    description: A persistent structured data store.
 ```
 
-The meaning stays stable while each environment can map the token to a suitable implementation.
+The package defines token libraries, architecture models, typed policy sets, validation reports, and renderer-input normalized models. Core, security, environment, and lifecycle are separate namespaces; applied token uses are `{token, value?}` objects.
 
 ## Start here
 
 - Read the normative [specification](./SPEC.md).
-- Inspect the machine-readable [JSON Schema](./schema/architecture-token.schema.json).
+- Inspect the machine-readable [JSON Schemas](./schema/).
 - Browse the valid [examples](./examples/).
 - Read the [contribution guide](./CONTRIBUTING.md) before proposing a change.
 

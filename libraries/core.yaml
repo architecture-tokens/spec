@@ -1,0 +1,16 @@
+kind: token-library
+namespace: core
+domains: [component, relationship]
+version: 0.1.0
+name: Core
+tokens:
+  - id: component.database
+    kind: component-type
+    name: Database
+    description: Persistent structured data store.
+    valueSchema: {type: object, required: [engine], properties: {engine: {type: string}}}
+  - {id: component.service, kind: component-type, name: Service, description: Deployable software service.}
+  - {id: component.external-actor, kind: component-type, name: External Actor, description: User or external system.}
+  - {id: relationship.call.sync, kind: relationship-type, name: Synchronous Call, description: Direct synchronous invocation.}
+  - {id: relationship.data.read, kind: relationship-type, name: Data Read, description: Reads data from another component.}
+  - {id: relationship.belongs.to, kind: relationship-type, name: Belongs To, description: Ownership association.}

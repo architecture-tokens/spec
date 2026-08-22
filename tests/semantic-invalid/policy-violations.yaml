@@ -1,0 +1,8 @@
+kind: architecture-model
+id: exposed
+libraries: [core@0.1.0, security@0.1.0, environment@0.1.0]
+components:
+  - {id: db, type: core:component.database, tokens: [{token: environment:environment.production}]}
+  - {id: actor, type: core:component.external-actor, tokens: []}
+relationships:
+  - {id: read, type: core:relationship.data.read, from: actor, to: db, tokens: []}

@@ -1,0 +1,4 @@
+kind: architecture-model
+libraries: [core@0.1.0]
+components: []
+relationships: []

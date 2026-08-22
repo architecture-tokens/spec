@@ -1,0 +1,6 @@
+kind: architecture-model
+id: unknown-field
+category: resource
+libraries: [core@0.1.0]
+components: []
+relationships: []

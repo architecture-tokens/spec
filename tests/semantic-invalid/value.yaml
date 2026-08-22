@@ -1,0 +1,8 @@
+kind: architecture-model
+id: value
+libraries: [core@0.1.0]
+components:
+  - id: db
+    type: core:component.database
+    tokens: [{token: security:security.encryption.at-rest, value: false}]
+relationships: []

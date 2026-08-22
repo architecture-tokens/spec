@@ -1,0 +1,6 @@
+kind: architecture-model
+id: duplicate-application
+libraries: [core@0.1.0, environment@0.1.0]
+components:
+  - {id: api, type: core:component.service, tokens: [{token: environment:environment.production}, {token: environment:environment.production}]}
+relationships: []

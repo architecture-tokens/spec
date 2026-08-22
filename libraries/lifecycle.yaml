@@ -1,0 +1,10 @@
+kind: token-library
+namespace: lifecycle
+domains: [lifecycle]
+version: 0.1.0
+name: Lifecycle
+tokens:
+  - {id: lifecycle.new, kind: applied, name: New, description: Newly introduced, appliesTo: {elementKinds: [component, relationship]}, conflicts: [lifecycle:lifecycle.modified, lifecycle:lifecycle.deprecated, lifecycle:lifecycle.removed]}
+  - {id: lifecycle.modified, kind: applied, name: Modified, description: Modified element, appliesTo: {elementKinds: [component, relationship]}, conflicts: [lifecycle:lifecycle.new, lifecycle:lifecycle.deprecated, lifecycle:lifecycle.removed]}
+  - {id: lifecycle.deprecated, kind: applied, name: Deprecated, description: Deprecated element, appliesTo: {elementKinds: [component, relationship]}, conflicts: [lifecycle:lifecycle.new, lifecycle:lifecycle.modified, lifecycle:lifecycle.removed]}
+  - {id: lifecycle.removed, kind: applied, name: Removed, description: Removed element, appliesTo: {elementKinds: [component, relationship]}, conflicts: [lifecycle:lifecycle.new, lifecycle:lifecycle.modified, lifecycle:lifecycle.deprecated]}

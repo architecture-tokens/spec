@@ -1,0 +1,8 @@
+kind: architecture-model
+id: inapplicable
+libraries: [core@0.1.0, security@0.1.0]
+components:
+  - id: api
+    type: core:component.service
+    tokens: [{token: security:security.encryption.in-transit}]
+relationships: []

@@ -1,0 +1,4 @@
+{
+  "invalid-references.yaml": {"codes": ["UNRESOLVED_LIBRARY_REF", "WRONG_LIBRARY_REF_KIND"]},
+  "duplicates.yaml": {"codes": ["TOKEN_NAMESPACE_MISMATCH", "DUPLICATE_LIBRARY_ID", "DUPLICATE_TOKEN_ID"]}
+}

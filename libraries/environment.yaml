@@ -1,0 +1,9 @@
+kind: token-library
+namespace: environment
+domains: [environment]
+version: 0.1.0
+name: Environment
+tokens:
+  - {id: environment.production, kind: applied, name: Production, description: Production deployment, appliesTo: {elementKinds: [component]}}
+  - {id: environment.staging, kind: applied, name: Staging, description: Staging deployment, appliesTo: {elementKinds: [component]}}
+  - {id: environment.development, kind: applied, name: Development, description: Development deployment, appliesTo: {elementKinds: [component]}}

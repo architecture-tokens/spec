@@ -1,0 +1,6 @@
+kind: architecture-model
+id: bad-config
+libraries: [core@0.1.0]
+components:
+  - {id: db, type: core:component.database, tokens: [], configuration: {engine: 42}}
+relationships: []

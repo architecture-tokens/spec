@@ -1,0 +1,8 @@
+kind: architecture-model
+id: wrong-kind
+libraries: [core@0.1.0]
+components:
+  - id: api
+    type: core:relationship.call.sync
+    tokens: []
+relationships: []

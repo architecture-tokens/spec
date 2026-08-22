@@ -1,0 +1,29 @@
+kind: token-library
+namespace: security
+domains: [security]
+version: 0.1.0
+name: Security
+tokens:
+  - id: security.encryption.at-rest
+    kind: applied
+    name: Encryption at rest
+    description: Stored data is encrypted.
+    appliesTo: {elementKinds: [component], componentTypes: [core:component.database]}
+    valueSchema: {type: object, required: [algorithm], properties: {algorithm: {type: string}}}
+  - id: security.encryption.in-transit
+    kind: applied
+    name: Encryption in transit
+    description: Traffic is encrypted in transit.
+    appliesTo: {elementKinds: [relationship], relationshipTypes: [core:relationship.call.sync, core:relationship.data.read]}
+  - id: security.tls.1-3
+    kind: applied
+    name: TLS 1.3
+    description: Relationship uses TLS 1.3.
+    appliesTo: {elementKinds: [relationship], relationshipTypes: [core:relationship.call.sync, core:relationship.data.read]}
+    requires: [security:security.encryption.in-transit]
+  - id: security.tls.v13
+    kind: applied
+    name: TLS v1.3
+    description: Relationship uses TLS v1.3.
+    appliesTo: {elementKinds: [relationship]}
+    requires: [security:security.encryption.in-transit]

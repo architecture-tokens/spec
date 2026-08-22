@@ -1,0 +1,5 @@
+{
+  "invalid-id.yaml": {"schema": "architecture-model", "keyword": "pattern", "instancePath": "/components/0/id"},
+  "missing-id.yaml": {"schema": "architecture-model", "keyword": "required", "instancePath": ""},
+  "unknown-category.yaml": {"schema": "architecture-model", "keyword": "additionalProperties", "instancePath": ""}
+}

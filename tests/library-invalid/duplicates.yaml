@@ -1,0 +1,14 @@
+- kind: token-library
+  namespace: dup
+  domains: [different]
+  version: 0.1.0
+  name: Duplicate one
+  tokens:
+    - {id: other.one, kind: applied, name: One, description: One}
+- kind: token-library
+  namespace: dup
+  domains: [different]
+  version: 0.1.0
+  name: Duplicate two
+  tokens:
+    - {id: other.one, kind: applied, name: One, description: One}
