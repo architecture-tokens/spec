@@ -1,0 +1,8 @@
+kind: architecture-model
+id: unresolved
+libraries: [core@0.1.0]
+components:
+  - id: api
+    type: missing:component.service
+    tokens: []
+relationships: []

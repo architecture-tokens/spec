@@ -1,0 +1,27 @@
+kind: policy-set
+id: baseline-security
+policies:
+  - id: production-data-encrypted
+    description: Production databases must be encrypted.
+    severity: error
+    target: component
+    where:
+      all:
+        - kind: component
+        - type: core:component.database
+        - hasToken: core:component.production
+    assert:
+      hasToken: core:component.encrypted
+    message: Production databases must carry the encrypted token.
+    remediation: Enable encryption at rest and in transit.
+  - id: public-only-via-exposes
+    description: Public services must expose through a declared edge.
+    severity: warning
+    target: component
+    where: {hasToken: core:component.public}
+    assert:
+      connectedTo:
+        direction: in
+        relationshipType: core:relationship.exposes
+        elementType: core:component.service
+    message: Public elements need a direct exposes relationship.

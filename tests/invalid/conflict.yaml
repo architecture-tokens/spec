@@ -1,0 +1,8 @@
+kind: architecture-model
+id: conflict
+libraries: [core@0.1.0]
+components:
+  - id: api
+    type: core:component.service
+    tokens: [core:component.public, core:component.encrypted, core:component.production]
+relationships: []

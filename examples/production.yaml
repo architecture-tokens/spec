@@ -1,0 +1,18 @@
+kind: architecture-model
+id: payments
+name: Payments service
+libraries: [core@0.1.0]
+components:
+  - id: api
+    type: core:component.service
+    tokens: [core:component.production, core:component.public]
+  - id: ledger
+    type: core:component.database
+    tokens: [core:component.production, core:component.encrypted]
+    values: {engine: postgres}
+relationships:
+  - id: api-ledger
+    type: core:relationship.calls
+    from: api
+    to: ledger
+    tokens: []
