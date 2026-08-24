@@ -6,7 +6,7 @@ import { parse as yaml } from 'yaml';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ajv = new Ajv2020({ allErrors: true, strict: true });
-const names = ['token-library', 'architecture-model', 'policy-set', 'validation-report', 'renderer-input'];
+const names = ['token-library', 'architecture-model', 'architecture-view', 'policy-set', 'validation-report', 'renderer-input'];
 const schemas = {};
 const validators = {};
 const format = (errors) => (errors ?? []).map((e) => `${e.instancePath || '/'} ${e.keyword}: ${e.message}`).join('; ');
@@ -142,7 +142,7 @@ function run() {
   if (!validateLibraries(libraries).valid) fail('shipped libraries invalid');
   for (const file of fs.readdirSync(path.join(root, 'examples')).filter((name) => name.endsWith('.yaml'))) {
     const document = read(path.join(root, 'examples', file));
-    const schema = document.kind === 'architecture-model' ? 'architecture-model' : 'policy-set';
+    const schema = document.kind === 'architecture-model' ? 'architecture-model' : document.kind === 'view' ? 'architecture-view' : 'policy-set';
     if (!validators[schema](document)) fail(`${file} schema invalid: ${format(validators[schema].errors)}`);
     if (schema === 'architecture-model') {
       const normalized = normalizeArchitecture(document, libraries);

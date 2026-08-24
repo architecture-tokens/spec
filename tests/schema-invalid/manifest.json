@@ -1,4 +1,8 @@
 {
+  "view-invalid-mode.yaml": { "schema": "architecture-view", "keyword": "enum", "instancePath": "/mode" },
+  "view-invalid-offset.yaml": { "schema": "architecture-view", "keyword": "type", "instancePath": "/components/ledger/0/offset/dx" },
+  "view-invalid-version.yaml": { "schema": "architecture-view", "keyword": "const", "instancePath": "/version" },
+  "view-unknown-property.yaml": { "schema": "architecture-view", "keyword": "additionalProperties", "instancePath": "" },
   "invalid-id.yaml": {"schema": "architecture-model", "keyword": "pattern", "instancePath": "/components/0/id"},
   "missing-id.yaml": {"schema": "architecture-model", "keyword": "required", "instancePath": ""},
   "unknown-category.yaml": {"schema": "architecture-model", "keyword": "additionalProperties", "instancePath": ""}

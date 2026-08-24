@@ -1,0 +1,25 @@
+kind: view
+version: 0.1.0
+id: production-ledger
+model: production.yaml
+mode: restyle
+reason: Present the production ledger as a left-to-right service flow.
+flow:
+  direction: right
+components:
+  ledger:
+    - icon: database
+      anchor: middle-left
+      offset: { dx: 4, dy: 0 }
+relationships:
+  api-ledger:
+    - icon: encrypted-link
+      anchor: edge-midpoint
+visualElements:
+  - id: production-boundary
+    kind: environment-band
+    label: Production
+    members: [ledger]
+    attachments:
+      - icon: production
+        anchor: top-right

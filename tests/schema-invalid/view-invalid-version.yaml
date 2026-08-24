@@ -1,0 +1,9 @@
+kind: view
+version: 0.2.0
+id: future-view
+model: production.yaml
+mode: restyle
+flow: { direction: left }
+components: {}
+relationships: {}
+visualElements: []
