@@ -1,0 +1,10 @@
+kind: view
+version: 0.1.0
+id: loose-view
+model: production.yaml
+mode: reproduce
+flow: { direction: up }
+components: {}
+relationships: {}
+visualElements: []
+palette: aws
