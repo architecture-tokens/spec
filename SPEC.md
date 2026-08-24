@@ -28,8 +28,29 @@ Validation reports contain stable `code`, `severity`, `layer`, document `path`,
 optional affected `elementId` and `ruleId`, `message`, and optional remediation.
 Renderer input is a normalized resolved model; layout is outside v0.1.
 
-Flows, separate type/instance identity, architecture evolution, remote
-registries, standard layout hints, and layout models are out of scope.
+An architecture view is the versioned, presentation-only companion to one
+architecture model. Version `0.1.0` declares either `reproduce` mode (preserve a
+source diagram's deliberate visual structure) or `restyle` mode (apply a new
+visual language). `flow.direction` records the intended reading direction as
+`up`, `down`, `left`, `right`, or `mixed`.
+
+The `components` and `relationships` maps attach one or more icons to model
+element IDs. Every attachment has an `icon` and `anchor`, plus an optional
+finite canvas-space `{dx, dy}` offset. Component and visual-element attachments
+use the nine-grid anchors from `top-left` through `bottom-right`; relationship
+attachments use `edge-start`, `edge-midpoint`, or `edge-end`. Renderers MUST
+reject owners that do not resolve to the corresponding model collection and
+anchors that do not match their owner kind.
+
+`visualElements` describe presentation-only groupings such as availability-zone
+bands. Each has an ID and one or more `members` that resolve to model component
+IDs, and may carry its own attachment list. Visual-element IDs are local to the
+view and MUST be unique. Unknown fields are invalid throughout the view
+contract; presentation metadata therefore cannot silently become architecture
+semantics.
+
+Separate type/instance identity, architecture evolution, remote registries,
+standard layout hints, and layout models are out of scope.
 
 See the [schemas](./schema/), [reference library](./libraries/core.yaml), and
 [examples](./examples/). The package is Apache-2.0 licensed.

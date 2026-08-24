@@ -1,0 +1,13 @@
+kind: view
+version: 0.1.0
+id: invalid-offset
+model: production.yaml
+mode: reproduce
+flow: { direction: mixed }
+components:
+  ledger:
+    - icon: database
+      anchor: middle-center
+      offset: { dx: Infinity, dy: 0 }
+relationships: {}
+visualElements: []

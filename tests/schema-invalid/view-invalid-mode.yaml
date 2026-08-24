@@ -1,0 +1,9 @@
+kind: view
+version: 0.1.0
+id: invalid-mode
+model: production.yaml
+mode: enhance
+flow: { direction: right }
+components: {}
+relationships: {}
+visualElements: []
