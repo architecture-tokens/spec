@@ -25,6 +25,25 @@ tokens:
 
 The package defines token libraries, architecture models, typed policy sets, validation reports, and renderer-input normalized models. Core, security, environment, and lifecycle are separate namespaces; applied token uses are `{token, value?}` objects.
 
+## Token-only model
+
+v0.1 uses **Token** as its only reusable semantic vocabulary. A Token is not a
+managed cloud resource or deployment. Instead, an architecture model contains
+components and relationships, which reference Tokens for their type and
+annotations:
+
+- `core:component.service` types a component such as `orders-api`.
+- `core:relationship.call.sync` types its call to `payments-api`.
+- `lifecycle:lifecycle.deprecated` can annotate either element with a lifecycle
+  fact.
+
+An **Asset**—for example, a Kubernetes Deployment, database instance,
+repository, alert policy, or cloud account—is deliberately outside v0.1. It may
+eventually be mapped to a component through an integration or a mapping, but it
+does not replace the component, relationship, or Token that conveys
+architecture meaning. This lets a model keep describing `orders-api` while its
+runtime deployment changes.
+
 ## Start here
 
 - Read the normative [specification](./SPEC.md).

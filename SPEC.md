@@ -18,6 +18,24 @@ objects `{token, value?}`. `appliesTo` can restrict element kinds and type
 tokens; application values are checked against `valueSchema`. Relationships
 connect existing component IDs. Libraries are selected as `namespace@version`.
 
+## Token-only boundary
+
+Tokens are reusable definitions of architecture meaning, not managed runtime
+objects. In v0.1, a component or relationship is the architecture-model
+element; its type token classifies it, and applied tokens annotate it. For
+example, `orders-api` can be a component of type
+`core:component.service`; its synchronous call to `payments-api` can be a
+relationship of type `core:relationship.call.sync`; and
+`lifecycle:lifecycle.deprecated` can be an applied token on either element.
+
+An Asset is a concrete managed object, such as a Kubernetes Deployment,
+database instance, repository, alert policy, or cloud account. Asset records
+and Token-to-Asset links are not part of the v0.1 schema. A later integration
+may associate an Asset with an architecture-model component, but it must not
+change the semantic meaning expressed by the component, relationship, or
+Token. This preserves architectural continuity when an implementation is
+migrated or replaced.
+
 Policy sets are safe typed YAML: no code or CEL. A rule has `id`, `description`,
 `severity` (`error` or `warning`), `target`, `where`, `assert`, `message`, and
 optional `remediation`. Conditions are recursive `all`, `any`, `not`, or leaf
