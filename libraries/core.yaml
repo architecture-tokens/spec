@@ -10,6 +10,10 @@ tokens:
     description: Persistent structured data store.
     valueSchema: {type: object, required: [engine], properties: {engine: {type: string}}}
   - {id: component.service, kind: component-type, name: Service, description: Deployable software service.}
+  - id: component.process
+    kind: component-type
+    name: Process
+    description: A bounded execution that transforms inputs into outputs, such as a build, pipeline, batch, or data-transformation step.
   - {id: component.external-actor, kind: component-type, name: External Actor, description: User or external system.}
   - {id: relationship.call.sync, kind: relationship-type, name: Synchronous Call, description: Direct synchronous invocation.}
   - {id: relationship.data.read, kind: relationship-type, name: Data Read, description: Reads data from another component.}

@@ -1,0 +1,10 @@
+kind: architecture-model
+id: settlement-pipeline
+libraries: [core@0.1.0]
+components:
+  - id: settlement-batch
+    type: core:component.process
+    tokens: []
+    metadata:
+      description: Transforms pending settlements into a published settlement batch.
+relationships: []
